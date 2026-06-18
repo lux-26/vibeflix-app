@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VibeFlix - Votre Cinéma à Portée de Main</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a href="#movies-grid" class="skip-link">Aller au contenu</a>
+
+    <header>
+      <h1>VibeFlix</h1>
+      <p>Découvrez les films populaires ou recherchez votre prochain coup de cœur</p>
+    </header>
+
+    <main>
+      <form id="search-form">
+        <label for="search-input" class="visually-hidden">Rechercher un film</label>
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Rechercher un film..."
+          autocomplete="off"
+        />
+        <button type="submit">Rechercher</button>
+        <button type="button" id="reset-btn">Réinitialiser</button>
+      </form>
+
+      <div class="filters" role="group" aria-label="Filtres et tri">
+        <div class="filter-group">
+          <label for="genre-filter">Genre</label>
+          <select id="genre-filter">
+            <option value="">Tous les genres</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="sort-select">Trier par</label>
+          <select id="sort-select">
+            <option value="popularity">Popularité</option>
+            <option value="rating-desc">Note (décroissante)</option>
+            <option value="rating-asc">Note (croissante)</option>
+            <option value="release-desc">Date de sortie (récent)</option>
+            <option value="title-asc">Titre (A–Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="status" class="status" aria-live="polite" aria-atomic="true">
+        <div id="loading" class="loading-indicator" hidden>
+          <div class="spinner" aria-hidden="true"></div>
+          <p>Chargement des films...</p>
+        </div>
+        <p id="error" hidden></p>
+        <p id="result-count" hidden></p>
+      </div>
+
+      <section aria-labelledby="movies-heading">
+        <h2 id="movies-heading" class="visually-hidden">Liste des films</h2>
+        <div id="movies-grid" class="movies-grid"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
