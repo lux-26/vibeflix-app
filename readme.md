@@ -1,0 +1,1 @@
+VibeFlix est une application web personnelle qui affiche les films populaires via l'API TMDb. Les utilisateurs peuvent rechercher des films, filtrer par genre et trier par note ou popularité. Projet à but éducatif et non commercial.
